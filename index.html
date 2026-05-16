@@ -1,0 +1,148 @@
+export default function App() { return ( <div className="min-h-screen bg-black text-white font-sans"> {/* Navbar */} <nav className="flex items-center justify-between px-8 py-5 border-b border-gray-800"> <h1 className="text-2xl font-bold tracking-wide text-yellow-400"> Nawab Darbar </h1>
+
+<div className="hidden md:flex gap-8 text-sm">
+      <a href="#home" className="hover:text-yellow-400 transition">
+        Home
+      </a>
+      <a href="#menu" className="hover:text-yellow-400 transition">
+        Menu
+      </a>
+      <a href="#about" className="hover:text-yellow-400 transition">
+        About
+      </a>
+      <a href="#contact" className="hover:text-yellow-400 transition">
+        Contact
+      </a>
+    </div>
+
+    <button className="bg-yellow-400 text-black px-5 py-2 rounded-xl font-semibold hover:scale-105 transition">
+      Order Now
+    </button>
+  </nav>
+
+  {/* Hero Section */}
+  <section
+    id="home"
+    className="flex flex-col items-center justify-center text-center px-6 py-28"
+  >
+    <p className="text-yellow-400 uppercase tracking-[6px] mb-4 text-sm">
+      Luxury Restaurant
+    </p>
+
+    <h2 className="text-5xl md:text-7xl font-extrabold leading-tight max-w-4xl">
+      Where Every Meal Tells a Story of Royalty
+    </h2>
+
+    <p className="text-gray-400 max-w-2xl mt-6 text-lg">
+      Premium dining experience with royal taste, elegant ambiance,
+      delicious cuisine and fast online ordering.
+    </p>
+
+    <div className="flex gap-4 mt-10 flex-wrap justify-center">
+      <button className="bg-yellow-400 text-black px-8 py-4 rounded-2xl font-bold hover:scale-105 transition">
+        Explore Menu
+      </button>
+
+      <button className="border border-gray-600 px-8 py-4 rounded-2xl hover:border-yellow-400 transition">
+        Book Table
+      </button>
+    </div>
+  </section>
+
+  {/* Menu Cards */}
+  <section id="menu" className="px-8 py-20 bg-[#111]">
+    <div className="text-center mb-14">
+      <h3 className="text-4xl font-bold">Popular Dishes</h3>
+      <p className="text-gray-400 mt-3">
+        Taste the most loved dishes from our royal kitchen.
+      </p>
+    </div>
+
+    <div className="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+      {[
+        {
+          name: 'Chicken Biryani',
+          price: '₹299',
+          desc: 'Authentic dum biryani with royal spices.',
+        },
+        {
+          name: 'Mutton Kebab',
+          price: '₹399',
+          desc: 'Juicy kebabs grilled with premium herbs.',
+        },
+        {
+          name: 'Butter Chicken',
+          price: '₹349',
+          desc: 'Creamy buttery curry with rich flavor.',
+        },
+      ].map((item, index) => (
+        <div
+          key={index}
+          className="bg-black border border-gray-800 rounded-3xl p-6 hover:border-yellow-400 transition hover:-translate-y-2"
+        >
+          <div className="h-48 rounded-2xl bg-gradient-to-br from-yellow-400 to-orange-500 mb-5" />
+
+          <div className="flex items-center justify-between mb-2">
+            <h4 className="text-2xl font-bold">{item.name}</h4>
+            <span className="text-yellow-400 font-semibold">
+              {item.price}
+            </span>
+          </div>
+
+          <p className="text-gray-400">{item.desc}</p>
+
+          <button className="w-full mt-6 bg-yellow-400 text-black py-3 rounded-xl font-bold hover:scale-105 transition">
+            Add To Cart
+          </button>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  {/* About */}
+  <section
+    id="about"
+    className="px-8 py-24 flex flex-col md:flex-row gap-12 items-center max-w-7xl mx-auto"
+  >
+    <div className="flex-1 h-[350px] rounded-3xl bg-gradient-to-br from-yellow-400 to-orange-500" />
+
+    <div className="flex-1">
+      <p className="text-yellow-400 uppercase tracking-[4px] mb-3">
+        About Us
+      </p>
+
+      <h3 className="text-5xl font-bold leading-tight">
+        Royal Taste Since 1998
+      </h3>
+
+      <p className="text-gray-400 mt-6 leading-8">
+        Nawab Darbar delivers luxury dining with handcrafted recipes,
+        premium ingredients and elegant service experience.
+      </p>
+
+      <button className="mt-8 bg-yellow-400 text-black px-8 py-4 rounded-2xl font-bold hover:scale-105 transition">
+        Learn More
+      </button>
+    </div>
+  </section>
+
+  {/* Footer */}
+  <footer
+    id="contact"
+    className="border-t border-gray-800 px-8 py-10 text-center text-gray-400"
+  >
+    <h4 className="text-2xl font-bold text-yellow-400 mb-3">
+      Nawab Darbar
+    </h4>
+
+    <p>Hazratganj, Lucknow, UP</p>
+
+    <p className="mt-3">+91 9876543210</p>
+
+    <p className="mt-6 text-sm text-gray-500">
+      © 2026 Nawab Darbar. All Rights Reserved.
+    </p>
+  </footer>
+</div>
+
+) }
